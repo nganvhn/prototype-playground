@@ -1,0 +1,9 @@
+{
+  "title": "Particle Orbits",
+  "description": "Hundreds of particles on Kepler-like orbits. Tune count, speed, size, hue and layout.",
+  "tags": ["canvas", "simulation", "example"],
+  "createdAt": "2026-11-20",
+  "updatedAt": "2026-11-19T23:57:18Z",
+  "hidden": false,
+  "public": false
+}

@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prototype Playground
 
-## Getting Started
+A personal playground of small, self-contained prototypes in one Next.js app. New prototypes are created by a coding agent following [`AGENTS.md`](./AGENTS.md) (`CLAUDE.md` imports it).
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000 (no password in dev)
+npm run check        # lint + typecheck + production build
+npm run thumbnails   # capture light/dark thumbnails (see AGENTS.md for flags)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy (Vercel)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Import this repo in Vercel (framework: Next.js, defaults are fine).
+2. Set `SITE_PASSWORD` for Production and Preview. Without it, production is locked.
+3. Every PR gets a preview deployment; the agent posts that link when it finishes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Public prototypes (`"public": true` in their `metadata.json`) are served without a password at `/p/<slug>`.
 
-## Learn More
+## Asking for a prototype
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+From any Claude Code session on this repo: *"Make a prototype that …"*. The agent branches, builds it under `app/prototypes/<slug>/`, captures thumbnails, opens a PR and replies with the preview link.

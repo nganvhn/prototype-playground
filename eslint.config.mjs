@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored shadcn/ui sources: keep identical to upstream.
+    "components/ui/**",
+    "hooks/use-mobile.ts",
+    "lib/*.generated.ts",
+    "test-results/**",
+    "playwright-report/**",
   ]),
 ]);
 
