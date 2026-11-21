@@ -248,3 +248,4 @@ Add a dated bullet whenever something breaks and gets fixed.
 - **2026-11-20 · A control panel mounted twice (side panel + mobile sheet) duplicated element ids.** `ControlPanel` prefixes ids with `useId()`; do the same in any component that can render twice.
 - **2026-11-20 · `next start` runs as a `next-server` process.** `pkill -f "next start"` leaves it alive, so kill by port or `pkill -f next-server` before restarting, or you'll test a stale build.
 - **2026-11-20 · Fonts come from the `geist` npm package**, not `next/font/google`, so builds don't depend on reaching Google Fonts.
+- **2026-11-21 · Closed `.collapse-grid` sections still take part in a parent's flex/grid `gap`**, leaving phantom space. Put spacing inside the collapsible content (`pt-*`) instead of using `gap` on the parent.
