@@ -28,14 +28,14 @@ export const prototypes: Prototype[] = [
   {
     "slug": "easing-lab",
     "title": "Easing Lab",
-    "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive real UI motion.",
+    "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive a card, modal and toast.",
     "tags": [
       "motion",
       "css",
       "tool"
     ],
     "createdAt": "2026-11-21",
-    "updatedAt": "2026-11-21T12:00:00Z",
+    "updatedAt": "2026-11-21T04:12:35Z",
     "hidden": false,
     "public": false,
     "thumbnails": {
