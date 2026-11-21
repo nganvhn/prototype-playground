@@ -26,6 +26,28 @@ export const prototypes: Prototype[] = [
     }
   },
   {
+    "slug": "easing-lab",
+    "title": "Easing Lab",
+    "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive real UI motion.",
+    "tags": [
+      "motion",
+      "css",
+      "tool"
+    ],
+    "createdAt": "2026-11-21",
+    "updatedAt": "2026-11-21T12:00:00Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/easing-lab-light.png",
+      "dark": "/thumbnails/easing-lab-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
+  },
+  {
     "slug": "particle-orbits",
     "title": "Particle Orbits",
     "description": "Hundreds of particles on Kepler-like orbits. Tune count, speed, size, hue and layout.",
