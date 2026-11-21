@@ -4,6 +4,28 @@ import type { Prototype } from "./prototype-types"
 
 export const prototypes: Prototype[] = [
   {
+    "slug": "colour-memory",
+    "title": "Colour Memory",
+    "description": "A colour flashes for a moment; recreate it from memory with HSL sliders and get scored on perceptual closeness.",
+    "tags": [
+      "game",
+      "colour",
+      "memory"
+    ],
+    "createdAt": "2026-11-21",
+    "updatedAt": "2026-11-21T00:55:00Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/colour-memory-light.png",
+      "dark": "/thumbnails/colour-memory-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
+  },
+  {
     "slug": "easing-lab",
     "title": "Easing Lab",
     "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive a card, modal and toast.",
