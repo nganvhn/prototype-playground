@@ -68,7 +68,14 @@ export function ControlPanel<S extends ControlSchema>({ controls }: { controls: 
                     style={{ background: `oklch(0.7 0.15 ${v as number})` }}
                   />
                 )}
-                {!isHue && c.format ? c.format(v as number) : (v as number)}
+                {!isHue && c.swatch && (
+                  <span
+                    aria-hidden
+                    className="h-3 w-8 rounded-full border border-border"
+                    style={{ background: c.swatch(values as Record<string, unknown>) }}
+                  />
+                )}
+                {v as number}
               </span>
             </div>
             <Slider

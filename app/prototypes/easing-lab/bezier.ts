@@ -15,9 +15,12 @@ export function toCss(b: Bezier): string {
   return `cubic-bezier(${b.map(formatNumber).join(", ")})`
 }
 
+export const clampX = (x: number) => round2(clamp(x, 0, 1))
+export const clampY = (y: number) => round2(clamp(y, GRAPH.yMin, GRAPH.yMax))
+
 /** Keep a handle inside the allowed area: x 0–1 (CSS requirement), y within the graph. */
 export function clampPoint(x: number, y: number): [number, number] {
-  return [round2(clamp(x, 0, 1)), round2(clamp(y, GRAPH.yMin, GRAPH.yMax))]
+  return [clampX(x), clampY(y)]
 }
 
 export function sameBezier(a: Bezier, b: Bezier): boolean {
@@ -60,14 +63,4 @@ export function solveEasing(b: Bezier, x: number): number {
     t = (lo + hi) / 2
   }
   return axis(y1, y2, t)
-}
-
-/** Curve-space (x, y) → SVG user units. */
-export function toSvg(x: number, y: number): [number, number] {
-  return [GRAPH.pad + x * GRAPH.unit, GRAPH.pad + (GRAPH.yMax - y) * GRAPH.unit]
-}
-
-/** SVG user units → curve space (unclamped). */
-export function fromSvg(sx: number, sy: number): [number, number] {
-  return [(sx - GRAPH.pad) / GRAPH.unit, GRAPH.yMax - (sy - GRAPH.pad) / GRAPH.unit]
 }

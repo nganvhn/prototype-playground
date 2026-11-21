@@ -28,19 +28,41 @@ export const prototypes: Prototype[] = [
   {
     "slug": "easing-lab",
     "title": "Easing Lab",
-    "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive real UI motion.",
+    "description": "Shape a cubic-bezier curve by dragging its handles and watch it drive a card, modal and toast.",
     "tags": [
       "motion",
       "css",
       "tool"
     ],
     "createdAt": "2026-11-21",
-    "updatedAt": "2026-11-21T12:00:00Z",
+    "updatedAt": "2026-11-21T04:12:35Z",
     "hidden": false,
     "public": false,
     "thumbnails": {
       "light": "/thumbnails/easing-lab-light.png",
       "dark": "/thumbnails/easing-lab-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
+  },
+  {
+    "slug": "flow-field",
+    "title": "Flow Field",
+    "description": "Thousands of particles drift on curl-noise water currents, leaving silky trails. Tap for whirlpools, drag to stir.",
+    "tags": [
+      "canvas",
+      "generative",
+      "simulation"
+    ],
+    "createdAt": "2026-11-21",
+    "updatedAt": "2026-11-21T14:00:00Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/flow-field-light.png",
+      "dark": "/thumbnails/flow-field-dark.png"
     },
     "og": {
       "image": null,
