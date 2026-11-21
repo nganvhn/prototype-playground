@@ -48,6 +48,28 @@ export const prototypes: Prototype[] = [
     }
   },
   {
+    "slug": "flow-field",
+    "title": "Flow Field",
+    "description": "Thousands of particles drift on curl-noise water currents, leaving silky trails. Tap for whirlpools, drag to stir.",
+    "tags": [
+      "canvas",
+      "generative",
+      "simulation"
+    ],
+    "createdAt": "2026-11-21",
+    "updatedAt": "2026-11-21T14:00:00Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/flow-field-light.png",
+      "dark": "/thumbnails/flow-field-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
+  },
+  {
     "slug": "particle-orbits",
     "title": "Particle Orbits",
     "description": "Hundreds of particles on Kepler-like orbits. Tune count, speed, size, hue and layout.",

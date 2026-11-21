@@ -1,0 +1,9 @@
+{
+  "title": "Flow Field",
+  "description": "Thousands of particles drift on curl-noise water currents, leaving silky trails. Tap for whirlpools, drag to stir.",
+  "tags": ["canvas", "generative", "simulation"],
+  "createdAt": "2026-11-21",
+  "updatedAt": "2026-11-21T14:00:00Z",
+  "hidden": false,
+  "public": false
+}

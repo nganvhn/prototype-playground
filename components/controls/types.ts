@@ -5,6 +5,8 @@ export type NumberControl = {
   max: number
   step?: number
   default: number
+  /** Optional CSS background for a small preview swatch, computed from all current values. */
+  swatch?: (values: Record<string, unknown>) => string
 }
 export type BooleanControl = { type: "boolean"; label: string; default: boolean }
 export type SelectControl<T extends string = string> = {
