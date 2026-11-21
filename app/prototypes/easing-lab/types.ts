@@ -13,3 +13,20 @@ export type Run = {
   duration: number
   startedAt: number
 }
+
+/** Pixel layout of the graph. x and y scales are independent (flattened on phones). */
+export type Geometry = {
+  width: number
+  height: number
+  /** Left edge of the 0–1 x range, in px. */
+  left: number
+  /** Pixels per curve unit on each axis. */
+  unitX: number
+  unitY: number
+}
+
+export type DemoProps = {
+  run: Run | null
+  reduced: boolean
+  className?: string
+}
