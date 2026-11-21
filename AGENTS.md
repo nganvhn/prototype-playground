@@ -248,3 +248,5 @@ Add a dated bullet whenever something breaks and gets fixed.
 - **2026-11-20 · A control panel mounted twice (side panel + mobile sheet) duplicated element ids.** `ControlPanel` prefixes ids with `useId()`; do the same in any component that can render twice.
 - **2026-11-20 · `next start` runs as a `next-server` process.** `pkill -f "next start"` leaves it alive, so kill by port or `pkill -f next-server` before restarting, or you'll test a stale build.
 - **2026-11-20 · Fonts come from the `geist` npm package**, not `next/font/google`, so builds don't depend on reaching Google Fonts.
+- **2026-11-21 · Headless Chromium draws 2D canvas on the CPU.** Frame timings under CPU throttling (to fake a phone) look far worse than a real GPU-backed phone. Time the pure simulation separately (`npx tsx` on the logic files) to see what your code actually costs. Also: avoid destructuring array literals (`[a, b] = [1, 2]`) in per-pixel/per-particle hot loops; each one allocates.
+- **2026-11-21 · Fresh cloud checkouts have no `node_modules`.** `npm run registry` fails with `tsx: not found` until you run `npm ci`.
