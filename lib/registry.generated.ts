@@ -68,6 +68,28 @@ export const prototypes: Prototype[] = [
       "image": null,
       "video": null
     }
+  },
+  {
+    "slug": "sound-mixer",
+    "title": "Sound Mixer",
+    "description": "Layer rain, café murmur and coloured noise into a focus mix, all synthesized live with Web Audio.",
+    "tags": [
+      "audio",
+      "web-audio",
+      "focus"
+    ],
+    "createdAt": "2026-11-21",
+    "updatedAt": "2026-11-21T04:36:19Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/sound-mixer-light.png",
+      "dark": "/thumbnails/sound-mixer-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
   }
 ]
 

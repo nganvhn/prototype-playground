@@ -68,7 +68,7 @@ export function ControlPanel<S extends ControlSchema>({ controls }: { controls: 
                     style={{ background: `oklch(0.7 0.15 ${v as number})` }}
                   />
                 )}
-                {v as number}
+                {!isHue && c.format ? c.format(v as number) : (v as number)}
               </span>
             </div>
             <Slider
