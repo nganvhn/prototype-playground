@@ -1,0 +1,9 @@
+{
+  "title": "Voronoi Garden",
+  "description": "A living stained-glass garden: tap to plant seeds that grow into cells, breathe and slowly recolour.",
+  "tags": ["canvas", "generative", "voronoi"],
+  "createdAt": "2026-11-24",
+  "updatedAt": "2026-11-24T12:00:00Z",
+  "hidden": false,
+  "public": false
+}

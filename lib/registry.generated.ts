@@ -90,6 +90,28 @@ export const prototypes: Prototype[] = [
       "image": null,
       "video": null
     }
+  },
+  {
+    "slug": "voronoi-garden",
+    "title": "Voronoi Garden",
+    "description": "A living stained-glass garden: tap to plant seeds that grow into cells, breathe and slowly recolour.",
+    "tags": [
+      "canvas",
+      "generative",
+      "voronoi"
+    ],
+    "createdAt": "2026-11-24",
+    "updatedAt": "2026-11-24T12:00:00Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/voronoi-garden-light.png",
+      "dark": "/thumbnails/voronoi-garden-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
   }
 ]
 
