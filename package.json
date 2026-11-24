@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.1.1",
     "cn": "^0.5.2",
+    "d3-delaunay": "^6.0.6",
     "date-fns": "^4.4.0",
     "embla-carousel-react": "^8.6.0",
     "geist": "^1.9.2",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
+    "@types/d3-delaunay": "^6.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

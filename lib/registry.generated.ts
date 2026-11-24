@@ -92,21 +92,21 @@ export const prototypes: Prototype[] = [
     }
   },
   {
-    "slug": "sound-mixer",
-    "title": "Sound Mixer",
-    "description": "Layer rain, café murmur and coloured noise into a focus mix, all synthesized live with Web Audio.",
+    "slug": "voronoi-garden",
+    "title": "Voronoi Garden",
+    "description": "A living stained-glass garden: tap to plant seeds that grow into cells, breathe and slowly recolour.",
     "tags": [
-      "audio",
-      "web-audio",
-      "focus"
+      "canvas",
+      "generative",
+      "voronoi"
     ],
-    "createdAt": "2026-11-21",
-    "updatedAt": "2026-11-21T04:36:19Z",
+    "createdAt": "2026-11-24",
+    "updatedAt": "2026-11-24T12:00:00Z",
     "hidden": false,
     "public": false,
     "thumbnails": {
-      "light": "/thumbnails/sound-mixer-light.png",
-      "dark": "/thumbnails/sound-mixer-dark.png"
+      "light": "/thumbnails/voronoi-garden-light.png",
+      "dark": "/thumbnails/voronoi-garden-dark.png"
     },
     "og": {
       "image": null,
