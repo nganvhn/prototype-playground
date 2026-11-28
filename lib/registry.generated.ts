@@ -70,6 +70,28 @@ export const prototypes: Prototype[] = [
     }
   },
   {
+    "slug": "nature-palettes",
+    "title": "Nature Palettes",
+    "description": "Two- and three-colour palettes drawn from nature, each with a reference photo of where the colours come from.",
+    "tags": [
+      "colour",
+      "palette",
+      "photos"
+    ],
+    "createdAt": "2026-11-28",
+    "updatedAt": "2026-11-28T02:01:28Z",
+    "hidden": false,
+    "public": false,
+    "thumbnails": {
+      "light": "/thumbnails/nature-palettes-light.png",
+      "dark": "/thumbnails/nature-palettes-dark.png"
+    },
+    "og": {
+      "image": null,
+      "video": null
+    }
+  },
+  {
     "slug": "particle-orbits",
     "title": "Particle Orbits",
     "description": "Hundreds of particles on Kepler-like orbits. Tune count, speed, size, hue and layout.",

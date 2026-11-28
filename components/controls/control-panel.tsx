@@ -52,6 +52,42 @@ export function ControlPanel<S extends ControlSchema>({ controls }: { controls: 
           )
         }
 
+        if (c.type === "multi") {
+          const selected = v as string[]
+          const full = c.max !== undefined && selected.length >= c.max
+          return (
+            <div key={key} className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <Label>{c.label}</Label>
+                {c.max !== undefined && (
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
+                    {selected.length}/{c.max}
+                  </span>
+                )}
+              </div>
+              <ToggleGroup
+                type="multiple"
+                variant="outline"
+                spacing={2}
+                value={selected}
+                onValueChange={(x) => set(k, c.options.filter((o) => x.includes(o)) as never)}
+                className="grid w-full grid-cols-3"
+              >
+                {c.options.map((o) => (
+                  <ToggleGroupItem
+                    key={o}
+                    value={o}
+                    disabled={full && !selected.includes(o)}
+                    className="h-11 capitalize"
+                  >
+                    {o}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+            </div>
+          )
+        }
+
         const isHue = c.type === "hue"
         const min = isHue ? 0 : c.min
         const max = isHue ? 360 : c.max

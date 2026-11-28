@@ -2,7 +2,7 @@ import type { Control, ControlSchema, ControlValues } from "./types"
 
 export function defaultsOf<S extends ControlSchema>(schema: S): ControlValues<S> {
   return Object.fromEntries(
-    Object.entries(schema).map(([k, c]) => [k, c.default])
+    Object.entries(schema).map(([k, c]) => [k, c.type === "multi" ? [...c.default] : c.default])
   ) as ControlValues<S>
 }
 
@@ -19,6 +19,14 @@ function randomValue(c: Control, rand: () => number) {
       return rand() < 0.5
     case "select":
       return c.options[Math.floor(rand() * c.options.length)]
+    case "multi": {
+      const max = Math.min(c.max ?? c.options.length, c.options.length)
+      const count = Math.floor(rand() * (max + 1))
+      const pool = [...c.options]
+      const picked: string[] = []
+      for (let i = 0; i < count; i++) picked.push(pool.splice(Math.floor(rand() * pool.length), 1)[0])
+      return c.options.filter((o) => picked.includes(o))
+    }
   }
 }
 
@@ -41,6 +49,10 @@ export function sanitize<S extends ControlSchema>(schema: S, raw: unknown): Cont
     if (c.type === "hue" && typeof v === "number" && v >= 0 && v <= 360) out[k] = v
     if (c.type === "boolean" && typeof v === "boolean") out[k] = v
     if (c.type === "select" && typeof v === "string" && c.options.includes(v)) out[k] = v
+    if (c.type === "multi" && Array.isArray(v)) {
+      const valid = c.options.filter((o) => v.includes(o))
+      out[k] = valid.slice(0, c.max ?? valid.length)
+    }
   }
   return out as ControlValues<S>
 }

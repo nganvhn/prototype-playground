@@ -138,6 +138,7 @@ Keep it current on every change. Sections:
     hue:   { type: "hue", label: "Hue", default: 250 },
     mode:  { type: "select", label: "Mode", options: ["a", "b"], default: "a" },
     trails:{ type: "boolean", label: "Trails", default: true },
+    tags:  { type: "multi", label: "Tags", options: ["x", "y", "z"], max: 2, default: [] },
   })
   // playground.tsx
   const c = useControls("<slug>", controls)
@@ -249,3 +250,5 @@ Add a dated bullet whenever something breaks and gets fixed.
 - **2026-11-20 · `next start` runs as a `next-server` process.** `pkill -f "next start"` leaves it alive, so kill by port or `pkill -f next-server` before restarting, or you'll test a stale build.
 - **2026-11-20 · Fonts come from the `geist` npm package**, not `next/font/google`, so builds don't depend on reaching Google Fonts.
 - **2026-11-21 · Closed `.collapse-grid` sections still take part in a parent's flex/grid `gap`**, leaving phantom space. Put spacing inside the collapsible content (`pt-*`) instead of using `gap` on the parent.
+- **2026-11-28 · Swipe handlers on a card broke when it contained a link or image.** A mouse/pen pointerdown on an `<a>` or `<img>` starts a native drag, so `pointerup` never arrives. Add `onDragStart={(e) => e.preventDefault()}` (or `draggable={false}`) on the swipe area, and don't wrap swipeable photos in links.
+- **2026-11-28 · Calling an external API from a route handler with Cache Components on:** put the fetch in an `async` helper with `"use cache"` + `cacheLife(...)` and throw on failure (thrown results aren't cached). Read `request.nextUrl.searchParams` in the handler **outside** its `try/catch` (it throws a prerender bail-out at build that must propagate) and pass plain values in. External hosts like `api.unsplash.com` may be unreachable from the agent sandbox, so mock the route in Playwright to check the success UI.

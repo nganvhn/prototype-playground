@@ -15,10 +15,18 @@ export type SelectControl<T extends string = string> = {
   options: readonly T[]
   default: T
 }
+/** Pick zero or more options, optionally capped at `max`. Value is an array of options. */
+export type MultiSelectControl<T extends string = string> = {
+  type: "multi"
+  label: string
+  options: readonly T[]
+  max?: number
+  default: readonly T[]
+}
 /** A hue in degrees (0–360). Rendered as a hue slider; consumers build oklch() from it. */
 export type HueControl = { type: "hue"; label: string; default: number }
 
-export type Control = NumberControl | BooleanControl | SelectControl | HueControl
+export type Control = NumberControl | BooleanControl | SelectControl | MultiSelectControl | HueControl
 export type ControlSchema = Record<string, Control>
 
 export type ControlValue<C extends Control> = C extends NumberControl | HueControl
@@ -27,7 +35,9 @@ export type ControlValue<C extends Control> = C extends NumberControl | HueContr
     ? boolean
     : C extends SelectControl<infer T>
       ? T
-      : never
+      : C extends MultiSelectControl<infer T>
+        ? T[]
+        : never
 
 export type ControlValues<S extends ControlSchema> = { [K in keyof S]: ControlValue<S[K]> }
 
