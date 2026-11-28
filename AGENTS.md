@@ -138,6 +138,7 @@ Keep it current on every change. Sections:
     hue:   { type: "hue", label: "Hue", default: 250 },
     mode:  { type: "select", label: "Mode", options: ["a", "b"], default: "a" },
     trails:{ type: "boolean", label: "Trails", default: true },
+    tags:  { type: "multi", label: "Tags", options: ["x", "y", "z"], max: 2, default: [] },
   })
   // playground.tsx
   const c = useControls("<slug>", controls)
