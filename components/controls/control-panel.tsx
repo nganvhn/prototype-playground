@@ -75,7 +75,7 @@ export function ControlPanel<S extends ControlSchema>({ controls }: { controls: 
                     style={{ background: c.swatch(values as Record<string, unknown>) }}
                   />
                 )}
-                {v as number}
+                {!isHue && c.format ? c.format(v as number) : (v as number)}
               </span>
             </div>
             <Slider
